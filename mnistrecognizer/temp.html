@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .upload-input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .upload-input:hover {
+            border-color: #777;
+            color: #555;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload your image</h1>
+        <label for="file-upload" class="upload-input">Click or drag and drop to upload</label>
+        <input id="file-upload" type="file" accept="image/jpeg">
+    </div>
+</body>
+</html>

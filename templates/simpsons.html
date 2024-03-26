@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .upload-input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .upload-input:hover {
+            border-color: #777;
+            color: #555;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1 id="prediction-result">Waiting for prediction...</h1>
+        <label for="file-upload" class="upload-input">Click or drag and drop to upload</label>
+        <input id="file-upload" type="file" accept="image/jpeg" onchange="uploadFile()">
+        <div id="image-container"></div>
+    </div>
+    <script type="text/javascript">
+        var uploadUrl = "{% url 'simpsons_predict' %}";  // Using Django templating to get the URL
+    </script>
+    <script>
+        function uploadFile() {
+            var input = document.getElementById('file-upload');
+            if (input.files && input.files[0]) {
+                var file = input.files[0];
+
+                var formData = new FormData();
+                formData.append("image", file);
+
+                fetch(uploadUrl, {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin',  // Include cookies in the request
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken')  // Ensure you have the CSRF token in the request
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    if (data.status === 'success') {
+                        // Update the <h1> tag with the prediction result
+                        document.getElementById('prediction-result').textContent = 'Prediction: ' + data.prediction;
+                        var input = document.getElementById('file-upload');
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+                            
+                            reader.onload = function (e) {
+                                var imageContainer = document.getElementById('image-container');
+                                imageContainer.innerHTML = '';
+                                var img = document.createElement('img');
+                                img.src = e.target.result;
+                                imageContainer.appendChild(img);
+                            };
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    } else {
+                        // Handle any errors, like no image provided
+                        document.getElementById('prediction-result').textContent = data.message;
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    document.getElementById('prediction-result').textContent = 'An error occurred during prediction.';
+                });
+            }
+        }
+
+        // Function to get CSRF token value
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+    <script>
+        function displayImage() {
+            
+        }
+    </script>
+</body>
+</html>

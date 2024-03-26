@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    #canvasContainer {
+      border: 2px solid #000;
+      background-color: #000;
+    }
+    canvas {
+      touch-action: none;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+
+<div id="canvasContainer">
+    <canvas id="drawCanvas" width="250" height="250"></canvas>
+  </div>
+  <button onclick="processAndSendImage()" id="processButton">Process Image</button>
+<div id="predictionResult">Prediction will be shown here</div>
+
+  <script>
+    const canvas = document.getElementById('drawCanvas');
+  const ctx = canvas.getContext('2d');
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+  let hue = 0;
+
+  
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+  
+    canvas.addEventListener('touchstart', (e) => startDrawing(e.touches[0]));
+    canvas.addEventListener('touchmove', (e) => draw(e.touches[0]));
+    canvas.addEventListener('touchend', stopDrawing);
+  
+    function getMousePos(canvas, evt) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+      };
+    }
+  
+    function startDrawing(e) {
+      isDrawing = true;
+      const mousePos = getMousePos(canvas, e);
+      ctx.beginPath();
+      ctx.moveTo(mousePos.x, mousePos.y);
+    }
+  
+    function draw(e) {
+      if (!isDrawing) return;
+      const mousePos = getMousePos(canvas, e);
+      ctx.lineTo(mousePos.x, mousePos.y);
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 10;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+    }
+  
+    function stopDrawing() {
+      if (!isDrawing) return;
+      ctx.stroke();
+      ctx.closePath();
+      isDrawing = false;
+    }
+  
+    document.getElementById('processButton').addEventListener('click', processAndSendImage);
+
+    function getCsrfToken() {
+        return document.cookie.split('; ').reduce((acc, cookieString) => {
+          const [cookieName, cookieValue] = cookieString.split('=');
+          if (cookieName === 'csrftoken') {
+            return decodeURIComponent(cookieValue);
+          }
+          return acc;
+        }, '');
+      }
+
+      function processAndSendImage() {
+        const offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = 250;
+        offscreenCanvas.height = 250;
+        const offCtx = offscreenCanvas.getContext('2d');
+        offCtx.drawImage(canvas, 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+      
+        // Convert the canvas to a Blob
+        offscreenCanvas.toBlob(function(blob) {
+          // Create a new FormData object
+          var formData = new FormData();
+          // Append the blob to the FormData object
+          formData.append('image', blob, 'image.png');
+      
+          // Get the CSRF token from the cookies
+          const csrfToken = getCookie('csrftoken');
+      
+          // Send the FormData object to the Django server using fetch
+          fetch('predict/', {
+            method: 'POST',
+            headers: {
+              // The 'X-CSRFToken' header is set to the token from the cookies
+              'X-CSRFToken': csrfToken
+            },
+            credentials: 'include', // Necessary for cookies to be sent with the request
+            body: formData // Send the form data
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('Success:', data); // Handle the response data
+            console.log(data.prediction);
+            document.getElementById('predictionResult').innerText = `Prediction: ${data.prediction}`;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          })
+          .catch(error => {
+            console.error('Error:', error); // Handle any errors
+          });
+        });
+      }
+      
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+  </script>
+{% endblock %}

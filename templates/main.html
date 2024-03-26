@@ -1,0 +1,683 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#show-option" ).tooltip({
+            show: {
+            effect: "slideDown",
+            delay: 300
+            }
+        });
+    });
+</script>
+
+
+<div class="preloader">
+    <div class="loader_34">
+        <div class="ytp-spinner">
+            <div class="ytp-spinner-container">
+                <div class="ytp-spinner-rotator">
+                    <div class="ytp-spinner-left">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                    <div class="ytp-spinner-right">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--====== PRELOADER ENDS START ======-->
+
+<!--====== HEADER PART START ======-->
+
+<header id="home" class="header-area">
+    <div class="navigation fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        {% comment %} <a class="navbar-brand" href="index.html">
+                            <img src="assets/images/logo.png" alt="Logo">
+                        </a> <!-- Logo --> {% endcomment %}
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active"><a class="page-scroll" href="#home">Home</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#about">About</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#service">Interests</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#work">Works</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#blog">Blog</a></li>
+                            </ul>
+                        </div> <!-- navbar collapse -->
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- navigation -->
+
+    <div id="parallax" class="header-content d-flex align-items-center">
+        <div class="header-shape shape-one layer" data-depth="0.10">
+            <img src="{% static '/images/banner/shape/shape-1.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-tow layer" data-depth="0.30">
+            <img src="{% static '/images/banner/shape/shape-2.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-three layer" data-depth="0.40">
+            <img src="{% static '/images/banner/shape/shape-3.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-fore layer" data-depth="0.60">
+            <img src="{% static '/images/banner/shape/shape-2.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-five layer" data-depth="0.20">
+            <img src="{% static '/images/banner/shape/shape-1.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-six layer" data-depth="0.15">
+            <img src="{% static '/images/banner/shape/shape-4.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-seven layer" data-depth="0.50">
+            <img src="{% static '/images/banner/shape/shape-5.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-eight layer" data-depth="0.40">
+            <img src="{% static '/images/banner/shape/shape-3.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-nine layer" data-depth="0.20">
+            <img src="{% static '/images/banner/shape/shape-6.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="header-shape shape-ten layer" data-depth="0.30">
+            <img src="{% static '/images/banner/shape/shape-3.png'%}" alt="Shape">
+        </div> <!-- header shape -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="header-content-right">
+                        <h4 class="sub-title">Hello, I’m</h4>
+                        <h1 class="title">Alnur Suleimenov</h1>
+                        <p>A passionate enthusiast of machine learning, mathematics, and computer science</p>
+                        <a class="main-btn" href="#work">View my Work</a>
+                    </div> <!-- header content right -->
+                </div>
+                
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="header-social">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-social-icon">
+                            <ul>
+                                <li><a href="https://wa.me/+77719110177" target="_blank"><i class="lni lni-whatsapp"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/alnur-suleimenov-90280b202/"><i class="lni-linkedin-original"></i></a></li>
+                                <li><a href="https://github.com/badprogrammer21" target="_blank"><i class="lni lni-github"></i></a></li>
+                                <li>
+                                    <a href="https://www.codewars.com/users/Alnur%20Suleimenov" target="_blank"><i class="lni lni-code"></i></a>
+                                </li>
+                                <li><a href="https://leetcode.com/bad_programmer21/" target="_blank"><i class="lnil lnil-route"></i></a></li>
+                                <li><a href="https://www.hackerrank.com/profile/drawntoyou2112" target="_blank"><i class="lni lni-layers"></i></a></li>
+                            </ul>
+                        </div> <!-- header social -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header social -->
+    </div> <!-- header content -->
+</header>
+
+<!--====== HEADER PART ENDS ======-->
+
+<!--====== ABOUT PART START ======-->
+
+<section id="about" class="about-area pt-125 pb-130">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="title">About The Website</h2>
+                    <p>This website is my digital playground, a space where my passion for continuous learning and my love for technology converge. Whether you're here to explore the latest trends in machine learning, dive into complex mathematical theories, or seek practical applications of computer science, you've come to the right place.</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-content mt-50">
+                    <h5 class="about-title">Hi There! I'm Alnur Suleimenov</h5>
+                    <p>My journey is marked by an insatiable curiosity for learning and a deep appreciation for the transformative power of technology. Through academic pursuits and practical applications, I thrive on challenging conventions and exploring innovative solutions in this ever-evolving field. Join me in discovering the endless possibilities that these disciplines offer.</p>
+                    <ul class="clearfix">
+                        <li>
+                            <div class="single-info d-flex align-items-center">
+                                <div class="info-icon">
+                                    <i class="lni-calendar"></i>
+                                </div>
+                                <div class="info-text">
+                                    <p><span>Date of birth:</span> 21 December 2004</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                        <li>
+                            <div class="single-info d-flex align-items-center">
+                                <div class="info-icon">
+                                    <i class="lni-envelope"></i>
+                                </div>
+                                <div class="info-text">
+                                    <p><span>Email:</span> yyyy05016@gmail.com</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                        <li>
+                            <div class="single-info d-flex align-items-center">
+                                <div class="info-icon">
+                                    <i class="lni-phone-handset"></i>
+                                </div>
+                                <div class="info-text">
+                                    <p><span>Phone:</span> +77719110177</p>
+                                </div>
+                            </div> <!-- single info -->
+                        </li>
+                    </ul>
+                </div> <!-- about content -->
+            </div>
+            <div class="col-xl-5 offset-xl-1 col-lg-6">
+                <div class="about-skills pt-25">
+                    <div class="skill-item mt-25">
+                        <div class="skill-header">
+                            <h6 class="skill-title">Python</h6>
+                            <div class="skill-percentage">
+                                <div class="count-box counted">
+                                    <span class="counter">90</span>
+                                </div>
+                                %
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" data-width="90"></div>
+                            </div>
+                        </div>
+                    </div> <!-- skill item -->
+                    <div class="skill-item mt-25">
+                        <div class="skill-header">
+                            <h6 class="skill-title">Machine/Deep Learning</h6>
+                            <div class="skill-percentage">
+                                <div class="count-box counted">
+                                    <span class="counter">24</span>
+                                </div>
+                                %
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" data-width="24"></div>
+                            </div>
+                        </div>
+                    </div> <!-- skill item -->
+                    <div class="skill-item mt-25">
+                        <div class="skill-header">
+                            <h6 class="skill-title">Data Structures and Algorithms</h6>
+                            <div class="skill-percentage">
+                                <div class="count-box counted">
+                                    <span class="counter">38</span>
+                                </div>
+                                %
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" data-width="38"></div>
+                            </div>
+                        </div>
+                    </div> <!-- skill item -->
+                    <div class="skill-item mt-25">
+                        <div class="skill-header">
+                            <h6 class="skill-title">Math</h6>
+                            
+                            <div class="skill-percentage">
+                                <div class="count-box counted">
+                                    <span class="counter"  id="dynamicCounter">100</span>
+                                </div>
+                                %
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" id="dynamicBar" data-width="100"></div>
+                            </div>
+                        </div>
+                        <div class="help-tip">
+                            <p>My self-assessment of skills is largely based on personal intuition and is intended more for visual appeal. Nevertheless, judging my proficiency in mathematics proves challenging due to the vast and expansive nature of the field.</p>
+                        </div>
+                    </div> <!-- skill item -->
+                </div> <!-- about skills -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== ABOUT PART ENDS ======-->
+
+<!--====== SERVICES PART START ======-->
+
+<section id="service" class="services-area gray-bg pt-125 pb-130">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center pb-30">
+                    <h2 class="title">My Interests</h2>
+                    <p>Nunc id dui at sapien faucibus fermentum ut vel diam. Nullam tempus, nunc id efficitur sagittis, urna est ultricies eros, ac porta sem turpis quis leo.</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni lni-calculator"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Mathematics</a></h4>
+                        <p>It is a pursuit of abstract truths, a testament to a human quest for order amidst the chaos of natural world. My enthusiasm lies not in monetary gain but in the joy of unraveling mysteries. The field of science that combines the rest.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni lni-trees"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#contact">Data Structures and Algorithms</a></h4>
+                        <p>My voyage into data structures and algorithms was a challenge, yet it laid down the essential foundation of my programming skills. It was through the trials and hard-time within this complex journey that I built a solid foundation upon which my coding endeavors stand.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <svg fill="#1C2033" width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M27.0984 33.8008H21.6984C20.4984 33.8008 19.3984 34.8008 19.3984 36.1008C19.3984 37.4008 20.3984 38.4008 21.6984 38.4008H27.0984C28.2984 38.4008 29.3984 37.4008 29.3984 36.1008C29.3984 34.8008 28.3984 33.8008 27.0984 33.8008Z"/><path d="M42.2 33.8008H36.8C35.6 33.8008 34.5 34.8008 34.5 36.1008C34.5 37.4008 35.5 38.4008 36.8 38.4008H42.2C43.4 38.4008 44.5 37.4008 44.5 36.1008C44.5 34.8008 43.5 33.8008 42.2 33.8008Z"/><path d="M56.9992 28.3V16.5C57.9992 16.3 58.6992 15.4 58.6992 14.3C58.6992 13.1 57.6992 12 56.3992 12H52.9992C51.7992 12 50.6992 13 50.6992 14.3C50.6992 15.3 51.3992 16.2 52.3992 16.5V27.8H51.1992C49.9992 23.5 45.9992 20.2 41.2992 20.2H22.7992C18.0992 20.2 14.0992 23.4 12.8992 27.8H9.79922C5.39922 27.8 1.69922 31.4 1.69922 35.9V36.3C1.69922 40.7 5.29922 44.4 9.79922 44.4H12.8992C14.0992 48.7 18.0992 52 22.7992 52H41.3992C46.0992 52 50.0992 48.8 51.2992 44.4H54.1992C58.5992 44.4 62.2992 40.8 62.2992 36.3V35.9C62.2992 32.4 59.9992 29.4 56.9992 28.3ZM6.29922 36.3V35.9C6.29922 33.9 7.89922 32.3 9.89922 32.3H12.5992V39.8H9.79922C7.79922 39.8 6.29922 38.2 6.29922 36.3ZM41.3992 47.4H22.7992C19.5992 47.4 16.9992 44.8 16.9992 41.6V30.5C16.9992 27.3 19.5992 24.7 22.7992 24.7H41.3992C44.5992 24.7 47.1992 27.3 47.1992 30.5V41.6C47.0992 44.8 44.4992 47.4 41.3992 47.4ZM57.7992 36.3C57.7992 38.3 56.1992 39.9 54.1992 39.9H51.5992V32.4H54.1992C56.1992 32.4 57.7992 34 57.7992 36V36.3Z"/></svg>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Machine Learning</a></h4>
+                        <p>Machine learning has blossomed into my most fervent interest. Its difficulty is matched only by its elegance, a sublime union of mathematics and computer science. Its potential to revolutionize our world is immeasurable.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni lni-book"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Literature</a></h4>
+                        <p>Literature has been a gateway to self-discovery, a source of companionship, and a leisurely refuge rich with philosophical and psychological undercurrents.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni-website"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Web Development</a></h4>
+                        <p>Web development emerged as a transitory spark of interest — an interlude that proved practical. While it may not ignite my passion as other pursuits do, it has equipped me with a valuable skill set.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni lni-dumbbell"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Calisthenics</a></h4>
+                        <p>Calisthenics has become my physical and mental assist, a discipline where stress dissolves with each movement.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <svg fill="#1C2033" width="52" height="52" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.8947 5.78922C13.5501 5.46085 14 4.78297 14 4C14 2.89543 13.1046 2 12 2C10.8954 2 10 2.89543 10 4C10 4.78297 10.4499 5.46085 11.1053 5.78922L10 7.99986L7.48501 6.3232C7.32656 6.21756 7.12411 6.37219 7.18433 6.55285L8.76277 11.2882C8.83733 11.2633 8.91709 11.2499 9 11.2499H15C15.0829 11.2499 15.1627 11.2633 15.2372 11.2882L16.8157 6.55285C16.8759 6.37219 16.6734 6.21756 16.515 6.3232L14 7.99986L12.8947 5.78922Z"/><path d="M15.093 12.7441L15.875 19H17C17.5523 19 18 19.4477 18 20V21C18 21.5523 17.5523 22 17 22H7C6.44771 22 6 21.5523 6 21V20C6 19.4477 6.44772 19 7 19H8.12498L8.90697 12.7441C8.93745 12.7479 8.9685 12.7499 9 12.7499H15C15.0315 12.7499 15.0626 12.7479 15.093 12.7441Z"/></svg>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Chess</a></h4>
+                        <p>Chess has been a beloved pastime since my younger days, a world of strategy and foresight that captivated me for reasons beyond my own understanding.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <svg fill="#1C2033" width="52" height="52" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.02137 3.53881C8.2184 2.1477 9.39904 1.64577 11.1626 2.25579L11.1649 21.4569C10.4797 22.3182 8.44939 21.9942 7.72343 20.3678C7.57418 20.0334 7.2347 19.827 6.87101 19.8494C5.12414 19.9569 4.51495 19.0641 4.9804 17.319C5.10929 16.8358 4.81265 16.3417 4.32747 16.2315L4.20093 16.1965C3.2918 15.8993 2.80244 14.7175 3.1566 13.5633C3.58462 12.1684 5.028 11.4404 7.40546 11.974C7.8775 12.08 8.34556 11.781 8.45089 11.3062C8.55622 10.8313 8.25894 10.3605 7.7869 10.2546C6.03535 9.86144 4.53764 10.0332 3.41995 10.6454C2.44509 8.66284 3.14149 5.42493 5.78179 4.80004C5.97651 4.75395 6.14967 4.64221 6.27248 4.48338L6.76978 3.8425L7.02137 3.53881ZM8.39077 15.5625C7.80594 14.8062 7.01752 14.2427 6.0437 13.8754C5.59084 13.7046 5.08606 13.9354 4.91624 14.3909C4.74642 14.8464 4.97586 15.3541 5.42872 15.525C6.10821 15.7813 6.62865 16.1532 7.00825 16.6441C7.37374 17.1168 7.57177 17.7011 7.59941 18.4238C7.618 18.91 8.02485 19.2889 8.50815 19.2702C8.99145 19.2515 9.36817 18.8423 9.34958 18.3561C9.30833 17.2772 8.98971 16.3371 8.39077 15.5625ZM10.2541 5.66333C10.3714 5.19136 10.0861 4.7131 9.61687 4.59511C9.14766 4.47711 8.67219 4.76407 8.55489 5.23604C8.43664 5.71181 8.22823 6.01578 7.9206 6.20144C7.54109 6.43049 7.12864 6.54363 6.66619 6.54363C6.18254 6.54363 5.79046 6.93801 5.79046 7.42451C5.79046 7.911 6.18254 8.30538 6.66619 8.30538C7.44372 8.30538 8.16792 8.10672 8.82172 7.71213C9.54741 7.27416 10.0279 6.5734 10.2541 5.66333Z"/><path d="M12.9155 2.30091C14.9988 1.7417 16.5765 2.4564 17.5883 4.18216C17.6931 4.36088 17.8572 4.49666 18.0518 4.56557C21.2956 5.71446 21.7052 9.0643 20.0482 11.5004C19.3404 12.5409 17.7177 13.239 17.2875 13.0568C16.8417 12.868 16.3282 13.0785 16.1406 13.5268C15.9529 13.9752 16.1621 14.4917 16.6078 14.6805C17.6481 15.1211 19.4534 14.5151 20.7086 13.3836C21.0399 13.972 21.0667 14.4701 20.8783 14.9296C20.6691 15.4403 20.2169 15.8963 19.5454 16.3691C19.2867 16.5513 19.1455 16.8594 19.1759 17.1756C19.3861 19.3603 18.6174 20.0033 17.0871 19.755C16.4625 19.6537 16.1405 19.2155 16.0644 18.1698C16.0291 17.6846 15.6095 17.32 15.1271 17.3555C14.6448 17.3911 14.2823 17.8132 14.3176 18.2984C14.4184 19.6834 14.9468 20.6877 15.8791 21.1868C15.5774 21.5848 15.1597 21.8289 14.6011 21.9446C13.8629 22.0974 13.3408 21.9374 12.9143 21.4229L12.9155 2.30091ZM17.428 7.97202C17.01 7.65052 16.6558 7.04759 16.3937 6.13952C16.2588 5.67232 15.773 5.40353 15.3085 5.53917C14.8441 5.67481 14.5768 6.16351 14.7117 6.63071C15.0696 7.8707 15.6109 8.79219 16.364 9.37149C17.1348 9.96437 18.1361 10.2052 19.3329 10.1222C19.8154 10.0887 20.1796 9.66815 20.1463 9.18281C20.113 8.69747 19.6949 8.33115 19.2124 8.36463C18.4114 8.42019 17.8283 8.27993 17.428 7.97202Z"/></svg>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Psychology</a></h4>
+                        <p>Though my journey into psychology is just beginning, it has already illuminated the workings of the human mind, offering insights that resonate through my daily life.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="single-service text-center mt-30">
+                    <div class="service-icon">
+                        <i class="lni lni-thought"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4 class="service-title"><a href="#">Philosophy</a></h4>
+                        <p>Philosophy, much like psychology, has carved its initial path in my life with strokes of chaos and wonder.</p>
+                    </div>
+                </div> <!-- single service -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== SERVICES PART ENDS ======-->
+
+<!--====== CALL TO ACTION PART START ======-->
+
+<section id="call-to-action" class="call-to-action pt-125 pb-130 bg_cover" style="background-image: url(assets/images/call-to-action.jpg)">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9">
+                <div class="call-action-content text-center">
+                    <h2 class="action-title">The Resume</h2>
+                    <p>The resume is up to frequent updates as I continue to undertake new projects and engage in various activities...</p>
+                    <ul>
+                        <li><a class="main-btn custom" href="{% url 'download_resume' %}">download cv</a></li>
+                    </ul>
+                </div> <!-- call action content -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== CALL TO ACTION PART ENDS ======-->
+
+<!--====== WORK PART START ======-->
+<section id="work" class="work-area pt-125 pb-130">
+    <div class="container" style="grid-gap: 10px;
+  grid-auto-rows: minmax(200px, auto);">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="section-title pb-25">
+                    <h2 class="title">My Works</h2>
+                    <p>The works showcases here represent the most significant projects of my journey. While some may exhibit imperfections or remain unfinished, the knowledge and growth they have fostered within me are beyond measure.</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30">
+                    <div class="work-image">
+                        <img src="{% static '/images/work/mnist-3.0.1.png' %}" alt="work">
+                    </div>
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">MNIST from scratch</h3>
+                            <ul>
+                                <li><a href="{% url 'mnistrecognizer' %} " ><i class="lni-link"></i></a></li>
+                                <li><a target="_blank" href="https://github.com/badprogrammer21/neuralnetworkMNIST/blob/master/MNISTfromScratch.ipynb" target="_blank"><i class="lni lni-github"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30">
+                    <div class="work-text">
+                        <p>I single-handedly created this website, embarking on the journey with no prior experience in web development or project management. This initial lack of expertise meant the site didn't gain widespread usage. However, it evolved into a valuable learning project, providing a platform for me to test my skills and apply my knowledge. Furthermore, I've come to realize that the concept of developing a forum website might not have been the most effective choice.</p>
+                    </div>
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">Forum Website</h3>
+                            <ul>
+                                <li><a href="https://github.com/badprogrammer21/empathy_site" target="_blank"><i class="lni lni-github"></i></a></li>
+                                <li><a href="http://scienceandart.xyz" target="_blank"><i class="lni-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30">
+                    <div class="work-text">
+                        <p>This project marked my initial foray into creating something potentially usable in a real-world context. Collaboratively developed by a five-person team for a competition at Turan University, I took on the role of backend developer and the leader. My knowledge and skills were limited to Python at that time, which somewhat limited the quality of our product. Through this experience, I discovered that my interest in game development was not strong. However, if I were to pursue such projects in the future, I would opt for more practical tools like Unity with C++, and collaborate with a more experienced team. This approach would not just facilitate the creation of an app or game but also enhance the overall development process.</p>
+                    </div>
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">My First Developed App</h3>
+                            <ul>
+                                <li><a href="{% url 'firstever' %}"><i class="lnil lnil-download-alt"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30" style="top: -200px;">
+                    <div class="work-text">
+                        <p>This project marked my initial foray into creating something potentially usable in a real-world context. Collaboratively developed by a five-person team for a competition at Turan University, I took on the role of backend developer and the leader. My knowledge and skills were limited to Python at that time, which somewhat limited the quality of our product. Through this experience, I discovered that my interest in game development was not strong. However, if I were to pursue such projects in the future, I would opt for more practical tools like Unity with C++, and collaborate with a more experienced team. This approach would not just facilitate the creation of an app or game but also enhance the overall development process.</p>
+                    </div>
+                    
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">Scientific papers (2)</h3>
+                            <ul>
+                                <li><a href="#"><i class="lni-link"></i></a></li>
+                                <li><a href="#"><i class="lni-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30" style="top: -200px;">
+                    <div class="work-image">
+                        <img src="{% static '/images/simpsons/simspsons5.jpg' %}" alt="work">
+                    </div>
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">Simpsons Recognition</h3>
+                            <ul>
+                                <li><a href="{% url 'simpsons' %}"><i class="lni-link"></i></a></li>
+                                <li><a target="_blank" href="https://github.com/badprogrammer21/neuralnetworkMNIST/blob/master/MNISTfromScratch.ipynb"><i class="lni lni-github-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-work text-center mt-30">
+                    <div class="work-image">
+                        <img src="{% static '/images/dog.jpg' %}" alt="work">
+                    </div>
+                    <div class="work-overlay">
+                        <div class="work-content">
+                            <h3 class="work-title">Object Detection (Currently In Work)
+                            </h3>
+                            <ul>
+                                <li><a class="image-popup" href="assets/images/work/w-5.jpg"><i class="lni-plus"></i></a></li>
+                                <li><a href="#"><i class="lni-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- single work -->
+            </div>
+           
+        </div> <!-- row -->
+        <div class="row" >
+            <div class="col-lg-12" style="top: -200px">
+                <div class="work-more text-center mt-50">
+                    <a class="main-btn"  href="#">more works</a>
+                </div> <!-- work more -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== WORK PART ENDS ======-->
+
+<!--====== PRICING PART ENDS ======-->
+
+<!--====== BLOG PART START ======-->
+
+<section id="blog" class="blog-area pt-125 pb-170 gray-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" >
+                <div class="section-title text-center pb-25">
+                    <h2 class="title">From The Blog</h2>
+                    <p>Since the idea of making a personal website come to my mind recently, there are no blog posts yet</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-8 col-sm-9">
+                <div class="single-blog mt-30">
+                    <div class="blog-image">
+                        <img src="{% static '/images/blog/b-1.jpg' %}" alt="Blog">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="blog-title"><a href="blog-details.html">Nan</a></h4>
+                        <span>January 10, 2024</span>
+                    </div>
+                </div> <!-- single blog -->
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-9">
+                <div class="single-blog mt-30">
+                    <div class="blog-image">
+                        <img src="{% static '/images/blog/b-2.jpg' %}" alt="Blog">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="blog-title"><a href="blog-details.html">Nan</a></h4>
+                        <span>January 10, 2024</span>
+                    </div>
+                </div> <!-- single blog -->
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-9">
+                <div class="single-blog mt-30">
+                    <div class="blog-image">
+                        <img src="{% static '/images/blog/b-3.jpg' %}" alt="Blog">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="blog-title"><a href="blog-details.html">Nan</a></h4>
+                        <span>January 10, 2024</span>
+                    </div>
+                </div> <!-- single blog -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-more text-center mt-50">
+                    <a class="main-btn" href="#">More posts</a>
+                </div> <!-- blog more -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== BLOG PART ENDS ======-->
+
+
+<!--====== FOOTER PART START ======-->
+
+<footer id="footer" class="footer-area">
+    <div class="footer-widget pt-130 pb-130">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="footer-content text-center">
+
+                        <ul>
+                            <li><a href="https://wa.me/+77719110177" target="_blank"><i class="lni lni-whatsapp"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/alnur-suleimenov-90280b202/"><i class="lni-linkedin-original"></i></a></li>
+                                <li><a href="https://github.com/badprogrammer21" target="_blank"><i class="lni lni-github"></i></a></li>
+                                <li>
+                                    <a href="https://www.codewars.com/users/Alnur%20Suleimenov" target="_blank"><i class="lni lni-code"></i></a>
+                                </li>
+                                <li><a href="https://leetcode.com/bad_programmer21/" target="_blank"><i class="lnil lnil-route"></i></a></li>
+                                <li><a href="https://www.hackerrank.com/profile/drawntoyou2112" target="_blank"><i class="lni lni-layers"></i></a></li>
+                        </ul>
+                    </div> <!-- footer content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- footer widget -->
+    <div class="footer-copyright pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text text-center pt-20">
+                        <p>Copyright © 2024. All rights reserved by Me :></p>
+                    </div> <!-- copyright text -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- footer widget -->
+</footer>
+
+<!--====== FOOTER PART ENDS ======-->
+
+<!--====== BACK TOP TOP PART START ======-->
+
+<a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+<!--====== BACK TOP TOP PART ENDS ======-->
+<script>
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.textContent = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    setInterval(() => {
+        var dynamicBar = document.getElementById("dynamicBar");
+        var dynamicCounter = document.getElementById("dynamicCounter");
+
+        var randomWidth = Math.floor(Math.random() * 100) + 1;
+        animateValue(dynamicCounter, parseInt(dynamicCounter.textContent), randomWidth, 500);
+
+        dynamicBar.setAttribute('data-width', randomWidth);
+  
+
+        dynamicBar.style.width = randomWidth + '%';
+    }, 500); // 5 * 1000 ms = 5 seconds
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $('.row').masonry({
+        itemSelector: '.single-work',
+        columnWidth: 200, // this should be the size of your column width
+        gutter: 10 // the space between the elements
+      });
+    });
+  </script>
+</body>
+
+
+
+
+
+
+{% endblock %}
